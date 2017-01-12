@@ -70,10 +70,6 @@ def main( ) :
 						(response, header_info) = server_connection.head(message_id)
 						header = parse_header(header_info.lines)
 						
-						#for (text, encoding) in decode_header(header_info[b"Subject"]):
-						#	print("Sending \"{}\"".format(text.decode(encoding)))
-						#print("Sending \"{}\"".format(header_info[b"Subject"]))
-						
 						body_charset = default_charset
 						content_type = header[b"Content-Type"].decode('utf-8')
 						_charset = body_charset_regex.findall(content_type)
